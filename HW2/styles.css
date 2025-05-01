@@ -1,0 +1,101 @@
+/* <!--112550081 許秉棋 第II次作業10/11
+	112550081 Ping Chi Hsu The Second Homework 10/11--> */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-section, .result-section {
+    margin-bottom: 30px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input-container label {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.input-container input[type="number"] {
+    width: 150px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.number-image {
+    display: flex;
+    gap: 2px;
+}
+
+.number-image img {
+    width: 30px;
+    height: 30px;
+}
+
+/* 調整 Input Numbers 和 Computed Results 區域中的數字圖像大小 */
+.small-number-image img {
+    width: 30px; /* 調整寬度 */
+    height: 30px; /* 調整高度 */
+}
+
+/* 新增 small-img 類別，用於縮小圖像 */
+.small-img {
+    width: 30px;
+    height: 30px;
+}
+
+/* 中位數單元格特定樣式 */
+.median-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* 調整間距 */
+}
+
+.median-cell span.dot {
+    font-size: 24px; /* 增大字體大小 */
+    font-weight: bold; /* 可選，增加字體粗細 */
+    margin: 0 5px;
+}
+
+.median-cell span.dot-circle {
+    display: inline-block;
+    width: 15px; /* 圓形的寬度 */
+    height: 15px; /* 圓形的高度 */
+    background-color: black; /* 圓形的顏色 */
+    border-radius: 50%; /* 使其成為圓形 */
+    margin: 0 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+.error {
+    color: red;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

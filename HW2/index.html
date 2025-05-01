@@ -1,0 +1,105 @@
+<!--112550081 許秉棋 第II次作業10/11
+	112550081 Ping Chi Hsu The Second Homework 10/11-->
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW2_112550081_許秉棋</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <h1>Integer Processing Application</h1>
+
+    <div class="input-section">
+        <h2>Enter 8 Integers (1-999)</h2>
+        <form id="integerForm">
+            <div class="input-container">
+                <label for="num1">Number 1:</label>
+                <input type="number" id="num1" required>
+                <div class="number-image" id="img-num1"></div>
+            </div>
+            
+            <div class="input-container">
+                <label for="num2">Number 2:</label>
+                <input type="number" id="num2" required>
+                <div class="number-image" id="img-num2"></div>
+            </div>
+            
+            <div class="input-container">
+                <label for="num3">Number 3:</label>
+                <input type="number" id="num3" required>
+                <div class="number-image" id="img-num3"></div>
+            </div>
+            
+            <div class="input-container">
+                <label for="num4">Number 4:</label>
+                <input type="number" id="num4" required>
+                <div class="number-image" id="img-num4"></div>
+            </div>
+            
+            <div class="input-container">
+                <label for="num5">Number 5:</label>
+                <input type="number" id="num5" required>
+                <div class="number-image" id="img-num5"></div>
+            </div>
+            
+            <div class="input-container">
+                <label for="num6">Number 6:</label>
+                <input type="number" id="num6" required>
+                <div class="number-image" id="img-num6"></div>
+            </div>
+            
+            <div class="input-container">
+                <label for="num7">Number 7:</label>
+                <input type="number" id="num7" required>
+                <div class="number-image" id="img-num7"></div>
+            </div>
+            
+            <div class="input-container">
+                <label for="num8">Number 8:</label>
+                <input type="number" id="num8" required>
+                <div class="number-image" id="img-num8"></div>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+        <p id="errorMessage" class="error"></p>
+    </div>
+
+    <div class="result-section" id="results" style="display:none;">
+        <h2>Input Numbers:</h2>
+        <div id="inputNumbers" class="small-number-image"></div>
+
+        <h2>Computed Results:</h2>
+        <table>
+            <tr>
+                <th>Maximum</th>
+                <th>Minimum</th>
+                <th>Median</th>
+            </tr>
+            <tr>
+                <td id="max" class="small-number-image"></td>
+                <td id="min" class="small-number-image"></td>
+                <td id="median"></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th>Prime Numbers</th>
+                <th>Armstrong Numbers</th>
+                <th>Fibonacci Numbers</th>
+            </tr>
+            <tr>
+                <td id="primes" class="small-number-image"></td>
+                <td id="armstrongs" class="small-number-image"></td>
+                <td id="fibonaccis" class="small-number-image"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+/*
+112550081 許秉棋 第一次作業 9/26
+112550081 PING CHI HSU The First Homework 9/26 */
+@keyframes backgroundChange {
+    0% { background-color: #f4f4f4; }
+    25% { background-color: #d1e7dd; }
+    50% { background-color: #cfe2ff; }
+    75% { background-color: #fff3cd; }
+    100% { background-color: #f4f4f4; }
+}
+
+body {
+    animation: backgroundChange 10s infinite;
+}
+
+.overview-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+ul {
+    list-style-type: square;
+    font-size: 20px;
+}
+
+.button {
+    display: inline-block;
+    border: 1px solid black;
+    width: 100px; /* Set width for circle */
+    height: 100px; /* Set height for circle */
+    font-size: 1.5em;
+    color: rgb(60, 60, 60);
+    background-color: #6cd9fe;
+    border-radius: 50%; /* Make button circular */
+    text-align: center; /* Center text */
+    line-height: 100px; /* Center text vertically */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.8s, transform 0.3s; /* Added transform transition */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.button:hover {
+    background-color: #4bb8e5; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+
