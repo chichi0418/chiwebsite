@@ -7,10 +7,10 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# AI Context
+INSTRUCTIONS.md
+CLAUDE.md
+GEMINI.md
 
 # Editor directories and files
 .vscode/*

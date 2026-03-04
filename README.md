@@ -1,60 +1,65 @@
-# 🚀 Ping-Chi Hsu's Personal Website (React Edition)
+# CHI / P.C. HSU — Personal Portfolio
 
-這是許秉棋的個人網站，已從原始的靜態 HTML 遷移至現代化的 **React** 框架，具備多國語系切換與自動化部署功能。
+![Fashion Brand Aesthetic](https://img.shields.io/badge/Aesthetic-High--End%20Fashion-black?style=for-the-badge)
+![Tech Stack](https://img.shields.io/badge/Stack-React%20%7C%20TS%20%7C%20Vite-blue?style=for-the-badge)
 
-## 🌐 正式上線網址
-👉 **[https://chichi0418.github.io/chiwebsite/](https://chichi0418.github.io/chiwebsite/)**
+Welcome to the digital space of **Ping-Chi Hsu**. This is a modern, minimalist portfolio website designed with a focus on immersive interaction and a clean "High-End Fashion Brand" aesthetic.
 
----
-
-## ✨ 技術亮點 (Tech Stack)
-
-*   **前端框架**: [React 18](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/)
-*   **構建工具**: [Vite](https://vitejs.dev/) (極速編譯與熱更新)
-*   **多國語系**: [react-i18next](https://react.i18next.com/) (支援 中文/English 即時切換)
-*   **路由管理**: [React Router 6](https://reactrouter.com/) (單頁應用 SPA 導航)
-*   **自動化部署 (CI/CD)**: [GitHub Actions](https://github.com/features/actions) (自動編譯並發布至 GitHub Pages)
+🔗 **Live Site:** [https://chichi0418.github.io/chiwebsite/](https://chichi0418.github.io/chiwebsite/)
 
 ---
 
-## 📂 專案結構
+## 🖤 Design Concept
 
-*   `src/pages/`: 包含首頁、關於我、高中生活、系所介紹、專案與獎項等組件。
-*   `src/components/`: 全站通用的 UI 組件（如 Navbar）。
-*   `src/i18n.ts`: 多國語系設定中心。
-*   `public/assets/`: 存放所有圖片與多媒體資源。
-*   `.github/workflows/`: 自動化部署腳本。
-*   `legacy/`: 存放原始 HW1 的靜態 HTML 備份。
+This project moves away from traditional portfolio layouts, embracing:
+- **Monochrome & High Contrast**: A deep black background paired with sharp white typography.
+- **Immersive Interaction**: Slow, 2.4-second page transitions and custom interactive cursors.
+- **Editorial Layout**: Large, bold typography and masked grayscale imagery that feels like a digital magazine.
+
+## 🛠️ Technical Highlights
+
+- **React 19 & TypeScript**: Ensuring modern UI patterns and type-safe development.
+- **Immersive Routing**: `React Router 6` integrated with a custom "switch-reveal" transition system.
+- **Multilingual Support**: Fully localized in English (EN) and Chinese (CH) using `react-i18next`.
+- **Custom Interaction**: A custom-built cursor follower with `mix-blend-mode: difference` for intelligent color inversion.
+- **CI/CD Pipeline**: Automated builds and deployments via GitHub Actions.
 
 ---
 
-## 🛠️ 開發與測試流程
+## 🚀 Getting Started
 
-本專案使用 Node.js 環境開發，無需額外手動建立虛擬環境。
+To explore or modify this project locally:
 
-### 1. 本地開發 (Local Development)
-如果你想在自己的電腦跑起來進行修改：
+### 1. Installation
+Clone the repository and install dependencies using Node.js.
 ```bash
-# 安裝依賴套件 (這會建立 node_modules 隔離環境)
+git clone https://github.com/chichi0418/chiwebsite.git
+cd chiwebsite
 npm install
+```
 
-# 啟動開發伺服器
+### 2. Development
+Launch the Vite development server with Hot Module Replacement (HMR).
+```bash
 npm run dev
 ```
 
-### 2. 部署方式 (Deployment)
-本專案已整合 **GitHub Actions**。你只需要將改動推送到 GitHub，系統就會自動部署：
+### 3. Production Build
+Generate optimized static assets for production.
 ```bash
-git add .
-git commit -m "你的改動描述"
-git push origin main
+npm run build
 ```
 
 ---
 
-## 📝 備註
-*   **Legacy Content**: 原始作業內容已完整遷移至 React 組件中。
-*   **GAS 整合**: 預計下一階段將串接 Google Apps Script 進行資料動態存取。
+## 📁 Project Structure
+
+- `src/pages/`: Modular page components (Home, About, Projects, Awards).
+- `src/components/`: Shared UI elements (Navbar, CustomCursor).
+- `src/assets/`: Branding and static media.
+- `public/assets/`: Publicly accessible image resources.
+- `legacy/`: Original HW1 static HTML backup.
 
 ---
-© 2026 PINGCHI HSU. All rights reserved.
+
+© 2026 PING-CHI HSU. Built with precision and aesthetic intent.
