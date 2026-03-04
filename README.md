@@ -1,65 +1,53 @@
-# CHI / P.C. HSU — Personal Portfolio
+# CHI / P.C. HSU — THE DIGITAL SPACE
 
-![Fashion Brand Aesthetic](https://img.shields.io/badge/Aesthetic-High--End%20Fashion-black?style=for-the-badge)
-![Tech Stack](https://img.shields.io/badge/Stack-React%20%7C%20TS%20%7C%20Vite-blue?style=for-the-badge)
+![Aesthetic: High-End Fashion](https://img.shields.io/badge/Aesthetic-High--End%20Fashion-black?style=for-the-badge)
+![Tech: React 19 + TS](https://img.shields.io/badge/Stack-React%20%7C%20TS%20%7C%20Vite-blue?style=for-the-badge)
 
-Welcome to the digital space of **Ping-Chi Hsu**. This is a modern, minimalist portfolio website designed with a focus on immersive interaction and a clean "High-End Fashion Brand" aesthetic.
+> **[ 中文版本 / CHINESE VERSION ](./閱讀我.md)**
 
-🔗 **Live Site:** [https://chichi0418.github.io/chiwebsite/](https://chichi0418.github.io/chiwebsite/)
+Engineering at the critical intersection of aesthetics and pure logic. This digital space serves as a manifesto of digital craft, focused on immersive interaction and structural elegance.
 
----
-
-## 🖤 Design Concept
-
-This project moves away from traditional portfolio layouts, embracing:
-- **Monochrome & High Contrast**: A deep black background paired with sharp white typography.
-- **Immersive Interaction**: Slow, 2.4-second page transitions and custom interactive cursors.
-- **Editorial Layout**: Large, bold typography and masked grayscale imagery that feels like a digital magazine.
-
-## 🛠️ Technical Highlights
-
-- **React 19 & TypeScript**: Ensuring modern UI patterns and type-safe development.
-- **Immersive Routing**: `React Router 6` integrated with a custom "switch-reveal" transition system.
-- **Multilingual Support**: Fully localized in English (EN) and Chinese (CH) using `react-i18next`.
-- **Custom Interaction**: A custom-built cursor follower with `mix-blend-mode: difference` for intelligent color inversion.
-- **CI/CD Pipeline**: Automated builds and deployments via GitHub Actions.
+🔗 **LIVE ACCESS:** [https://chichi0418.github.io/chiwebsite/](https://chichi0418.github.io/chiwebsite/)
 
 ---
 
-## 🚀 Getting Started
+## 🖤 THE MANIFESTO
 
-To explore or modify this project locally:
+This space rejects traditional layouts in favor of an editorial experience:
+- **MONOCHROME IDENTITY**: A deep black canvas designed to focus on high-contrast structural content.
+- **TEMPORAL PRECISION**: 2.4-second "switch-reveal" transitions for a calm, intentional navigation flow.
+- **KINETIC INTERACTION**: Custom-built color-inverting cursor and masked grayscale imagery.
+- **TYPOGRAPHIC TENSION**: Utilizing *Syne* for brand impact and *Space Grotesk* for technical clarity.
 
-### 1. Installation
-Clone the repository and install dependencies using Node.js.
+## 🛠️ ARCHITECTURAL CORE
+
+- **Core**: React 19 + TypeScript (State-of-the-art UI patterns).
+- **Localization**: `react-i18next` (Seamless bilingual integration: EN/CH).
+- **Navigation**: `React Router 6` with composite animation keys.
+- **Motion**: Custom CSS-based Intersection Observers and Bezier-curved animations.
+- **CI/CD**: Automated deployment via GitHub Actions.
+
+---
+
+## 🚀 INITIALIZE ENVIRONMENT
+
+To replicate or explore this architecture locally:
+
 ```bash
+# Clone the repository
 git clone https://github.com/chichi0418/chiwebsite.git
-cd chiwebsite
+
+# Install dependencies
 npm install
-```
 
-### 2. Development
-Launch the Vite development server with Hot Module Replacement (HMR).
-```bash
+# Execute development server
 npm run dev
-```
 
-### 3. Production Build
-Generate optimized static assets for production.
-```bash
+# Generate production archive
 npm run build
 ```
 
 ---
 
-## 📁 Project Structure
-
-- `src/pages/`: Modular page components (Home, About, Projects, Awards).
-- `src/components/`: Shared UI elements (Navbar, CustomCursor).
-- `src/assets/`: Branding and static media.
-- `public/assets/`: Publicly accessible image resources.
-- `legacy/`: Original HW1 static HTML backup.
-
----
-
-© 2026 PING-CHI HSU. Built with precision and aesthetic intent.
+© 2026 PING-CHI HSU. ALL RIGHTS RESERVED.  
+**DESIGNED FOR THE DIGITAL SPACE.**
