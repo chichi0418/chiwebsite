@@ -51,8 +51,6 @@ function Navbar() {
       <div className={`navbar-links ${isMenuOpen ? 'show' : ''}`}>
         <Link to="/home" onClick={() => setIsMenuOpen(false)}>{t('home')}</Link>
         <Link to="/about" onClick={() => setIsMenuOpen(false)}>{t('about')}</Link>
-        <Link to="/highschool" onClick={() => setIsMenuOpen(false)}>{t('highschool')}</Link>
-        <Link to="/department" onClick={() => setIsMenuOpen(false)}>{t('department')}</Link>
         <Link to="/projects" onClick={() => setIsMenuOpen(false)}>{t('projects')}</Link>
         <Link to="/awards" onClick={() => setIsMenuOpen(false)}>{t('awards')}</Link>
 
