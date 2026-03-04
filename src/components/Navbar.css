@@ -3,12 +3,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 2000;
   width: 100%;
 }
 
@@ -21,25 +21,27 @@
 .navbar-links {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 
 .navbar-links a {
   font-size: 0.95rem;
   color: #555;
   transition: color 0.3s;
+  font-weight: 500;
 }
 
 .navbar-links a:hover {
   color: #fe6cc4;
 }
 
-/* 語系切換按鈕區域 */
-.language-switch {
+/* 語系切換 (桌面版) */
+.language-switch-desktop {
   display: flex;
   gap: 0.5rem;
 }
 
-.language-switch button {
+.language-switch-desktop button, .language-switch-mobile button {
   padding: 0.4rem 0.8rem;
   font-size: 0.8rem;
   font-weight: 600;
@@ -48,39 +50,86 @@
   color: #fe6cc4;
   border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s;
 }
 
-.language-switch button:hover {
-  background: rgba(254, 108, 196, 0.1);
-  transform: translateY(-2px);
-}
-
-/* 當前語系按鈕樣式 */
-.language-switch button.active {
+.language-switch-desktop button.active, .language-switch-mobile button.active {
   background: #fe6cc4;
   color: white;
-  box-shadow: 0 4px 12px rgba(254, 108, 196, 0.3);
+}
+
+/* 語系切換 (手機版預設隱藏) */
+.language-switch-mobile {
+  display: none;
+}
+
+/* 漢堡按鈕 (預設隱藏) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 2100;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+  transition: all 0.3s;
 }
 
 /* 手機版響應式設計 */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .navbar {
     padding: 1rem;
-    flex-wrap: wrap;
-    gap: 0.8rem;
   }
 
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* 漢堡選單打開時的動畫 */
+  .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+  .menu-toggle.open span:nth-child(2) { opacity: 0; }
+  .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
   .navbar-links {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    gap: 1.2rem;
-    border-top: 1px solid #f0f0f0;
-    padding-top: 0.8rem;
+    position: fixed;
+    top: 0;
+    right: -100%; /* 預設收起來 */
+    width: 250px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    padding: 80px 2rem 2rem;
+    transition: right 0.4s ease-in-out;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    align-items: flex-start;
+  }
+
+  .navbar-links.show {
+    right: 0; /* 滑出來 */
+  }
+
+  .language-switch-desktop {
+    display: none;
+  }
+
+  .language-switch-mobile {
+    display: flex;
+    margin-top: 2rem;
+    gap: 0.8rem;
   }
   
-  .navbar-logo {
-    flex: 1;
+  .navbar-links a {
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f5f5f5;
   }
 }
