@@ -24,13 +24,13 @@ function Home() {
               rel="noopener noreferrer" 
               className="cta-button"
             >
-              {t('explore_projects')}
+              <span className="btn-label">[ ARCHIVE ]</span>
             </a>
             <a
               href="mailto:pinchi6266@gmail.com"
               className="cta-button secondary"
             >
-              {t('contact_me')}
+              <span className="btn-label">[ CONTACT ]</span>
             </a>
           </div>
         </div>

@@ -15,18 +15,19 @@
 }
 
 .projects-header h1 {
+  font-family: var(--font-brand);
   font-size: clamp(3rem, 10vw, 6rem);
   text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.85;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 4rem;
-  max-width: 1600px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 6rem 4rem;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 4rem;
 }
@@ -37,11 +38,13 @@
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   border: none;
+  width: 100%;
 }
 
 .project-image {
   position: relative;
-  height: 300px;
+  aspect-ratio: 16 / 10;
+  height: auto;
   overflow: hidden;
   filter: grayscale(100%);
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -78,21 +81,41 @@
   opacity: 1;
 }
 
+@media (max-width: 1024px) {
+  .project-overlay {
+    opacity: 1; /* 手機版常駐顯示 */
+    background: rgba(0, 0, 0, 0.3); /* 輕微壓暗圖片，突出按鈕 */
+  }
+
+  .github-link {
+    font-size: 0.65rem;
+    padding: 0.6rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
 .github-link {
   color: white;
   text-decoration: none;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   border: 1px solid #fff;
+  font-family: var(--font-brand);
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: all 0.3s;
+  letter-spacing: 0.15em;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  background: transparent;
 }
 
 .github-link:hover {
-  background: white;
-  color: black;
+  background: #fff;
+  color: #000;
+  transform: translateY(-3px);
 }
 
 .project-info {
@@ -118,15 +141,17 @@
 }
 
 .project-info h2 {
-  font-size: 1.8rem;
+  font-family: var(--font-brand);
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #fff;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.01em;
 }
 
 .project-info p {
+  font-family: var(--font-body);
   color: #888;
   line-height: 1.6;
   font-size: 1rem;

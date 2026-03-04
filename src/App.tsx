@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -37,6 +38,7 @@ function AppContent() {
           <Route path="/awards" element={<Awards />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }
@@ -50,4 +52,3 @@ function App() {
 }
 
 export default App;
-

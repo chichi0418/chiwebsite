@@ -12,7 +12,6 @@
 }
 
 .navbar.scrolled {
-  padding: 1rem 4rem;
   background: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -20,7 +19,7 @@
 }
 
 .navbar-logo a {
-  font-family: var(--font-mono);
+  font-family: var(--font-brand);
   font-size: 0.9rem;
   font-weight: 800;
   color: #fff;
@@ -53,25 +52,9 @@
   position: relative;
 }
 
-.navbar-links a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: #fff;
-  transition: width 0.3s ease;
-}
-
 .navbar-links a:hover,
 .navbar-links a.active {
   color: #fff;
-}
-
-.navbar-links a:hover::after,
-.navbar-links a.active::after {
-  width: 100%;
 }
 
 /* Language Switch */
@@ -92,11 +75,6 @@
   transition: all 0.3s ease;
   font-family: var(--font-mono);
   letter-spacing: 0.05em;
-}
-
-.lang-separator {
-  color: #444;
-  font-size: 0.8rem;
 }
 
 .language-switch button.active,
@@ -127,15 +105,10 @@
     padding: 1.2rem 2rem;
   }
   
-  .navbar.scrolled {
-    padding: 1rem 2rem;
-  }
-
   .menu-toggle {
     display: flex;
   }
 
-  /* 漢堡選單動畫 */
   .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
   .menu-toggle.open span:nth-child(2) { opacity: 0; }
   .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
@@ -152,8 +125,8 @@
     padding: 2rem;
     transition: right 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     align-items: center;
-    gap: 2.5rem;
-    z-index: 2000;
+    gap: 3rem;
+    z-index: 2100;
   }
 
   .navbar-links.show {
@@ -161,6 +134,8 @@
   }
 
   .navbar-links a {
+    font-family: var(--font-brand);
     font-size: 1.5rem;
+    letter-spacing: 0.1em;
   }
 }
