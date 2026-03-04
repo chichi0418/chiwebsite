@@ -41,7 +41,7 @@ function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-logo">
         <Link to="/" onClick={() => setIsMenuOpen(false)}>
-          CHI / P.C. HSU
+          CHI
         </Link>
       </div>
 
