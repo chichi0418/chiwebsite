@@ -9,11 +9,13 @@ const Footer = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), 200);
-        }
+        // 每當進入視窗時設為 true，離開時設為 false，這樣每次捲動都會觸發
+        setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.05 }
+      { 
+        threshold: 0.1, // 進入 10% 寬度時觸發
+        rootMargin: '0px 0px -50px 0px' // 稍微偏移，讓動畫更自然
+      }
     );
 
     if (footerRef.current) {
