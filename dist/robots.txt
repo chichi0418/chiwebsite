@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://chichi0418.github.io/chiwebsite/sitemap.xml
