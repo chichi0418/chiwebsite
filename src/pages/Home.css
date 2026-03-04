@@ -1,0 +1,55 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 0 1rem;
+}
+
+.home-hero {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+.hero-title {
+  /* 使用 clamp 讓字體隨螢幕變動：最小 2rem，最適合 5vw，最大 4rem */
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  background: linear-gradient(45deg, #fe6cc4, #6cd9fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #666;
+  margin-bottom: 2.5rem;
+  padding: 0 1rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap; /* 手機版自動變上下排列 */
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  min-width: 160px;
+}
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cta-button {
+    width: 100%;
+    max-width: 250px;
+  }
+}

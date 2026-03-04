@@ -1,0 +1,68 @@
+.awards-page {
+  padding-bottom: 5rem;
+}
+
+.awards-header {
+  text-align: center;
+  padding: clamp(2rem, 10vh, 4rem) 1rem;
+  background: linear-gradient(135deg, #ffd700, #ff8c00);
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.awards-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.award-badge-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 自動依寬度分欄 */
+  gap: 2rem;
+  justify-items: center;
+  width: 100%;
+}
+
+.award-badge {
+  background: white;
+  padding: 2rem;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1; /* 保持正圓形 */
+  width: 100%;
+  max-width: 280px; /* 最大寬度限制 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.1);
+  border: 3px solid #ffd700;
+  animation: float 3s infinite ease-in-out;
+}
+
+.award-badge.disabled {
+  filter: grayscale(1);
+  opacity: 0.6;
+  border-color: #eee;
+  animation: none;
+}
+
+.medal-icon {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 0.5rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 480px) {
+  .award-badge {
+    max-width: 200px;
+    padding: 1.5rem;
+  }
+}

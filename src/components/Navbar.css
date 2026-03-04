@@ -1,0 +1,86 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.navbar-logo a {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links a {
+  font-size: 0.95rem;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #fe6cc4;
+}
+
+/* 語系切換按鈕區域 */
+.language-switch {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.language-switch button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1.5px solid #fe6cc4;
+  background: white;
+  color: #fe6cc4;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.language-switch button:hover {
+  background: rgba(254, 108, 196, 0.1);
+  transform: translateY(-2px);
+}
+
+/* 當前語系按鈕樣式 */
+.language-switch button.active {
+  background: #fe6cc4;
+  color: white;
+  box-shadow: 0 4px 12px rgba(254, 108, 196, 0.3);
+}
+
+/* 手機版響應式設計 */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .navbar-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 1.2rem;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 0.8rem;
+  }
+  
+  .navbar-logo {
+    flex: 1;
+  }
+}
