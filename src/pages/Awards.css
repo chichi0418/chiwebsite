@@ -1,74 +1,101 @@
 .awards-page {
   padding-bottom: 5rem;
+  background-color: #0a0a0a;
+  min-height: 100vh;
 }
 
 .awards-header {
-  text-align: center;
-  padding: clamp(2rem, 10vh, 4rem) 1rem;
-  background: linear-gradient(135deg, #ffd700, #ff8c00);
+  text-align: left;
+  padding: 8rem 4rem 4rem;
+  background: transparent;
   color: white;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.awards-header h1 {
+  font-size: clamp(3rem, 10vw, 6rem);
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
 }
 
 .awards-content {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: center;
+  padding: 0 4rem;
 }
 
 .award-badge-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 自動依寬度分欄 */
-  gap: 2rem;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
 .award-badge {
-  background: white;
-  padding: 2rem;
-  border-radius: 50%;
-  aspect-ratio: 1 / 1; /* 保持正圓形 */
+  background: transparent;
+  padding: 3rem 0;
+  border-radius: 0;
+  aspect-ratio: auto;
   width: 100%;
-  max-width: 280px; /* 最大寬度限制 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  max-width: none;
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
   align-items: center;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.1);
-  border: 3px solid #ffd700;
-  animation: float 3s infinite ease-in-out;
+  text-align: left;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid #222;
+  transition: all 0.3s ease;
+  animation: none;
+}
+
+.award-badge:hover {
+  padding-left: 2rem;
+  background-color: #111;
+  border-bottom-color: #fff;
 }
 
 .award-badge.disabled {
   filter: grayscale(1);
-  opacity: 0.6;
-  border-color: #eee;
-  animation: none;
+  opacity: 0.3;
 }
 
 .medal-icon {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  margin-bottom: 0;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.award-badge h2 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
 }
 
-@media (max-width: 480px) {
+.award-badge p {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
   .award-badge {
-    max-width: 200px;
-    padding: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2rem 0;
   }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .award-badge {
-    animation: none;
+  
+  .awards-header {
+    padding: 6rem 2rem 2rem;
+  }
+  
+  .awards-content {
+    padding: 0 2rem;
   }
 }

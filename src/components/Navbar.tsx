@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -14,6 +16,15 @@ function Navbar() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  // Scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Close menu on Escape key
   useEffect(() => {
@@ -27,65 +38,46 @@ function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-logo">
         <Link to="/" onClick={() => setIsMenuOpen(false)}>
-          <span className="logo-bracket">&lt;</span>
-          chi
-          <span className="logo-bracket"> /&gt;</span>
+          CHI / P.C. HSU
         </Link>
       </div>
 
-      {/* 漢堡按鈕 */}
-      <button
-        className={`menu-toggle ${isMenuOpen ? 'open' : ''}`}
-        onClick={toggleMenu}
-        aria-label={isMenuOpen ? '關閉選單' : '開啟選單'}
-        aria-expanded={isMenuOpen}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
       <div className={`navbar-links ${isMenuOpen ? 'show' : ''}`}>
-        <Link to="/home" onClick={() => setIsMenuOpen(false)}>{t('home')}</Link>
-        <Link to="/about" onClick={() => setIsMenuOpen(false)}>{t('about')}</Link>
-        <Link to="/projects" onClick={() => setIsMenuOpen(false)}>{t('projects')}</Link>
-        <Link to="/awards" onClick={() => setIsMenuOpen(false)}>{t('awards')}</Link>
+        <Link to="/home" className={location.pathname === '/home' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>{t('home')}</Link>
+        <Link to="/about" className={location.pathname === '/about' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>{t('about')}</Link>
+        <Link to="/projects" className={location.pathname === '/projects' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>{t('projects')}</Link>
+        <Link to="/awards" className={location.pathname === '/awards' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>{t('awards')}</Link>
+      </div>
 
-        <div className="language-switch-mobile">
-          <button
-            className={i18n.language.startsWith('zh') ? 'active' : ''}
-            onClick={() => changeLanguage('zh')}
-            aria-label="切換為中文"
-          >
-            ZH
-          </button>
+      <div className="navbar-right">
+        <div className="language-switch">
           <button
             className={i18n.language.startsWith('en') ? 'active' : ''}
             onClick={() => changeLanguage('en')}
-            aria-label="Switch to English"
           >
             EN
           </button>
+          <span className="lang-separator">/</span>
+          <button
+            className={i18n.language.startsWith('zh') ? 'active' : ''}
+            onClick={() => changeLanguage('zh')}
+          >
+            CH
+          </button>
         </div>
-      </div>
 
-      <div className="language-switch-desktop">
         <button
-          className={i18n.language.startsWith('zh') ? 'active' : ''}
-          onClick={() => changeLanguage('zh')}
-          aria-label="切換為中文"
+          className={`menu-toggle ${isMenuOpen ? 'open' : ''}`}
+          onClick={toggleMenu}
+          aria-label={isMenuOpen ? '關閉選單' : '開啟選單'}
+          aria-expanded={isMenuOpen}
         >
-          ZH
-        </button>
-        <button
-          className={i18n.language.startsWith('en') ? 'active' : ''}
-          onClick={() => changeLanguage('en')}
-          aria-label="Switch to English"
-        >
-          EN
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
     </nav>

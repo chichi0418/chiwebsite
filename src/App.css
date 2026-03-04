@@ -1,84 +1,31 @@
-/* 基於原先 HW1 的 CSS 並針對 React 組件優化 */
-.app-body {
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-    animation: backgroundChange 8s infinite alternate;
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes backgroundChange {
-    0% { background-color: #f4f4f4; }
-    25% { background-color: #d1e7dd; }
-    50% { background-color: #cfe2ff; }
-    75% { background-color: #fff3cd; }
-    100% { background-color: #f4f4f4; }
+.main-content {
+  flex: 1;
+  /* 極其緩慢的 2.4s 切換動畫 */
+  animation: switch-reveal 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.container {
-    background-color: white;
-    padding: 100px;
-    width: 90%;
-    max-width: 1000px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+@keyframes switch-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 
-.title {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.description {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 30px;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-/* 語言選擇圓圈 */
-.button-circle {
-    display: inline-block;
-    border: 1px solid black;
-    width: 150px;
-    height: 150px;
-    font-size: 1.5em;
-    color: rgb(60, 60, 60);
-    background-color: #6cd9fe;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 150px;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.8s, transform 0.3s;
-    outline: none;
-}
-
-.button-circle:hover {
-    background-color: #ffffff;
-    transform: scale(1.2);
-    opacity: 0.7;
-}
-
-/* 元素按鈕 */
-.button-pink {
-    background-color: #fe6cc4;
-}
-
-.button-pink:hover {
-    transform: rotateX(360deg);
+/* 防止手機版水平滾動 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
 }

@@ -1,0 +1,40 @@
+.custom-cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference; /* 反相效果：在白色背景上變黑色，黑色背景上變白色 */
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.custom-cursor.hover {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.custom-cursor.clicking {
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0.5;
+}
+
+/* 隱藏原生鼠標 (僅在非移動裝置) */
+@media (pointer: fine) {
+  body, a, button {
+    cursor: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .custom-cursor {
+    display: none;
+  }
+  body, a, button {
+    cursor: auto !important;
+  }
+}

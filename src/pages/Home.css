@@ -1,116 +1,201 @@
 .home-container {
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  color: #f5f5f5;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  padding: 0 1rem;
-  /* Subtle dot grid — engineer aesthetic */
-  background-image: radial-gradient(circle, rgba(254, 108, 196, 0.12) 1px, transparent 1px);
-  background-size: 28px 28px;
-  background-color: var(--color-bg, #f8f9fa);
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
 }
 
 .home-hero {
-  text-align: center;
-  max-width: 800px;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  padding: 0 4rem;
+  max-width: 1800px;
+  margin: 0 auto;
   width: 100%;
+  gap: 4rem;
 }
 
-/* Code-style prefix above title */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 3;
+}
+
 .hero-tag {
-  display: inline-block;
-  font-family: var(--font-mono, ui-monospace, Menlo, Consolas, monospace);
-  font-size: 0.85rem;
-  color: var(--color-primary, #fe6cc4);
-  background: rgba(254, 108, 196, 0.08);
-  border: 1px solid rgba(254, 108, 196, 0.2);
-  border-radius: 20px;
-  padding: 0.3rem 0.9rem;
-  margin-bottom: 1.2rem;
-  letter-spacing: 0.5px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: #888;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .hero-tag::before {
-  content: '$ ';
-  opacity: 0.5;
+  content: "";
+  width: 30px;
+  height: 1px;
+  background-color: #444;
 }
 
 .hero-title {
-  font-size: clamp(2rem, 8vw, 4.5rem);
-  background: var(--gradient-brand, linear-gradient(45deg, #fe6cc4, #6cd9fe));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1.5rem;
-  line-height: 1.15;
-  font-weight: 800;
-  letter-spacing: -1px;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.03em;
+  color: #fff;
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 3vw, 1.3rem);
-  color: var(--color-text-muted, #666);
-  margin-bottom: 2.8rem;
-  padding: 0 1rem;
-  line-height: 1.7;
+  font-size: 1.1rem;
+  color: #a0a0a0;
+  max-width: 450px;
+  line-height: 1.6;
+  margin-bottom: 3.5rem;
+  font-weight: 300;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
-/* Primary CTA */
 .cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.85rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: var(--radius-btn, 50px);
-  min-width: 160px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
-  border: none;
-  /* Gradient background */
-  background: var(--gradient-brand, linear-gradient(135deg, #fe6cc4, #6cd9fe));
-  color: white;
-  box-shadow: 0 4px 15px rgba(254, 108, 196, 0.35);
+  padding: 1.2rem 2.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background-color: #fff;
+  color: #000;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #fff;
 }
 
 .cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(254, 108, 196, 0.45);
+  background-color: transparent;
+  color: #fff;
+  transform: translateY(-5px);
 }
 
-.cta-button:active {
-  transform: translateY(0);
-}
-
-/* Secondary CTA — outline style */
 .cta-button.secondary {
-  background: transparent;
-  color: var(--color-primary, #fe6cc4);
-  border: 2px solid var(--color-primary, #fe6cc4);
-  box-shadow: none;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #444;
 }
 
 .cta-button.secondary:hover {
-  background: rgba(254, 108, 196, 0.06);
-  box-shadow: 0 4px 15px rgba(254, 108, 196, 0.15);
+  border-color: #fff;
+}
+
+.hero-image-container {
+  position: relative;
+  height: 90vh; 
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10vh; /* 增加上邊距讓整體下移 */
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 85%, transparent 100%),
+              linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%; /* 頭部下移：將重心從 10% 移到 30% */
+  filter: grayscale(100%) brightness(0.6) contrast(1.1);
+  transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-hero:hover .hero-image {
+  transform: scale(1.08);
+  filter: grayscale(20%) brightness(0.9);
+}
+
+/* Background texture/noise effect */
+.home-container::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Floating labels for a more "brand" look */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 4rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.scroll-indicator::after {
+  content: "";
+  width: 1px;
+  height: 40px;
+  background-color: #444;
+}
+
+@media (max-width: 1024px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    padding-top: 6rem;
+  }
+  
+  .hero-image-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3;
+    mask-image: linear-gradient(to left, black, transparent);
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
 }
 
 @media (max-width: 480px) {
   .hero-buttons {
     flex-direction: column;
-    align-items: center;
+    gap: 1rem;
   }
+  
   .cta-button {
     width: 100%;
-    max-width: 260px;
+    text-align: center;
   }
 }

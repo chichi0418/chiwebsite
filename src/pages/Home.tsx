@@ -7,25 +7,45 @@ function Home() {
   return (
     <div className="home-container">
       <div className="home-hero">
-        <p className="hero-tag">cs student &amp; developer</p>
-        <h1 className="hero-title">{t('welcome')}</h1>
-        <p className="hero-subtitle">{t('intro_text')}</p>
-        <div className="hero-buttons">
-          <a 
-            href="https://github.com/chichi0418" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="cta-button"
-          >
-            {t('explore_projects')}
-          </a>
-          <a
-            href="mailto:pinchi6266@gmail.com"
-            className="cta-button secondary"
-          >
-            {t('contact_me')}
-          </a>
+        <div className="hero-content">
+          <div className="hero-tag">
+            <span>Ping-Chi Hsu / 許秉棋</span>
+          </div>
+          <h1 className="hero-title">
+            {t('welcome').split(' ').map((word, i) => (
+              <span key={i} style={{ display: 'block' }}>{word}</span>
+            ))}
+          </h1>
+          <p className="hero-subtitle">{t('intro_text')}</p>
+          <div className="hero-buttons">
+            <a 
+              href="https://github.com/chichi0418" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="cta-button"
+            >
+              {t('explore_projects')}
+            </a>
+            <a
+              href="mailto:pinchi6266@gmail.com"
+              className="cta-button secondary"
+            >
+              {t('contact_me')}
+            </a>
+          </div>
         </div>
+        
+        <div className="hero-image-container">
+          <img 
+            src="/chiwebsite/assets/home.jpg" 
+            alt="Hero" 
+            className="hero-image"
+          />
+        </div>
+      </div>
+
+      <div className="scroll-indicator">
+        <span>Scroll to Explore</span>
       </div>
     </div>
   );
