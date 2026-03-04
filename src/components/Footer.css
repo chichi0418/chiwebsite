@@ -89,24 +89,31 @@
 @media (max-width: 768px) {
   .footer {
     padding: 3rem 1rem 4rem;
+    margin-top: 5rem;
   }
   .footer-content {
-    gap: 4rem; /* 手機版也維持較大的垂直間距感 */
+    gap: 3rem;
   }
   .footer-socials {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2rem;
+    flex-direction: row; /* 維持橫向排列 */
+    justify-content: center;
+    gap: 2.5rem; /* 縮小間距讓圖示能在一排顯示 */
+  }
+  .social-link span {
+    display: none; /* 在手機版隱藏文字，只留圖示 */
+  }
+  .social-icon {
+    width: 20px; /* 稍微放大圖標以便點擊 */
+    height: 20px;
   }
   .footer-bottom {
-    gap: 1rem;
-    font-size: 0.55rem;
+    flex-direction: column; 
+    gap: 0.8rem;
+    text-align: center;
   }
   .footer-brand span,
   .footer-tagline span {
     font-size: 0.55rem;
-  }
-  .social-link span {
-    font-size: 0.6rem;
+    white-space: normal;
   }
 }
