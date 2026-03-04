@@ -66,3 +66,9 @@
     padding: 1.5rem;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .award-badge {
+    animation: none;
+  }
+}

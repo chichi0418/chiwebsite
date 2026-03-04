@@ -7,13 +7,13 @@ function Department() {
 
   return (
     <div className="about-page">
-      <header className="about-header" style={{ background: 'linear-gradient(135deg, #e67e22, #f1c40f)' }}>
+      <header className="about-header dept-header">
         <h1>{t('dept_title')}</h1>
       </header>
       <div className="about-sections">
         <div className="about-card left">
           <div className="about-image">
-            <img src={`${assetPath}/department1.webp`} alt="NYCU CS" />
+            <img src={`${assetPath}/department1.webp`} alt="NYCU CS" loading="lazy" />
           </div>
           <div className="about-text">
             <h2>{t('dept_name')}</h2>
@@ -22,7 +22,7 @@ function Department() {
         </div>
         <div className="about-card right">
           <div className="about-image">
-            <img src={`${assetPath}/department2.jpg`} alt="NYCU CS Architecture" />
+            <img src={`${assetPath}/department2.jpg`} alt="NYCU CS Architecture" loading="lazy" />
           </div>
           <div className="about-text">
             <h2>{t('dept_desc_2_title') || '整合與創新'}</h2>

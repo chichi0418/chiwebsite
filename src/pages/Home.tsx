@@ -7,6 +7,7 @@ function Home() {
   return (
     <div className="home-container">
       <div className="home-hero">
+        <p className="hero-tag">cs student &amp; developer</p>
         <h1 className="hero-title">{t('welcome')}</h1>
         <p className="hero-subtitle">{t('intro_text')}</p>
         <div className="hero-buttons">
@@ -18,7 +19,12 @@ function Home() {
           >
             {t('explore_projects')}
           </a>
-          <button className="cta-button secondary">{t('contact_me')}</button>
+          <a
+            href="mailto:pinchi6266@gmail.com"
+            className="cta-button secondary"
+          >
+            {t('contact_me')}
+          </a>
         </div>
       </div>
     </div>

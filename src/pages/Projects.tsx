@@ -31,7 +31,7 @@ function Projects() {
         {projectList.map((project, index) => (
           <div key={index} className="project-card">
             <div className="project-image">
-              <img src={project.image} alt={project.title} />
+              <img src={project.image} alt={project.title} loading="lazy" />
               <div className="project-overlay">
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="github-link">
                   {t('project_github')}

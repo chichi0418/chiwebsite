@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
@@ -15,14 +15,34 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Close menu on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isMenuOpen]);
+
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/" onClick={() => setIsMenuOpen(false)}>{t('welcome')}</Link>
+        <Link to="/" onClick={() => setIsMenuOpen(false)}>
+          <span className="logo-bracket">&lt;</span>
+          chi
+          <span className="logo-bracket"> /&gt;</span>
+        </Link>
       </div>
 
       {/* 漢堡按鈕 */}
-      <button className={`menu-toggle ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+      <button
+        className={`menu-toggle ${isMenuOpen ? 'open' : ''}`}
+        onClick={toggleMenu}
+        aria-label={isMenuOpen ? '關閉選單' : '開啟選單'}
+        aria-expanded={isMenuOpen}
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -35,17 +55,19 @@ function Navbar() {
         <Link to="/department" onClick={() => setIsMenuOpen(false)}>{t('department')}</Link>
         <Link to="/projects" onClick={() => setIsMenuOpen(false)}>{t('projects')}</Link>
         <Link to="/awards" onClick={() => setIsMenuOpen(false)}>{t('awards')}</Link>
-        
+
         <div className="language-switch-mobile">
-          <button 
-            className={i18n.language.startsWith('zh') ? 'active' : ''} 
+          <button
+            className={i18n.language.startsWith('zh') ? 'active' : ''}
             onClick={() => changeLanguage('zh')}
+            aria-label="切換為中文"
           >
             ZH
           </button>
-          <button 
-            className={i18n.language.startsWith('en') ? 'active' : ''} 
+          <button
+            className={i18n.language.startsWith('en') ? 'active' : ''}
             onClick={() => changeLanguage('en')}
+            aria-label="Switch to English"
           >
             EN
           </button>
@@ -53,15 +75,17 @@ function Navbar() {
       </div>
 
       <div className="language-switch-desktop">
-        <button 
-          className={i18n.language.startsWith('zh') ? 'active' : ''} 
+        <button
+          className={i18n.language.startsWith('zh') ? 'active' : ''}
           onClick={() => changeLanguage('zh')}
+          aria-label="切換為中文"
         >
           ZH
         </button>
-        <button 
-          className={i18n.language.startsWith('en') ? 'active' : ''} 
+        <button
+          className={i18n.language.startsWith('en') ? 'active' : ''}
           onClick={() => changeLanguage('en')}
+          aria-label="Switch to English"
         >
           EN
         </button>

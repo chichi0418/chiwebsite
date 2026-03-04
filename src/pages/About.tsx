@@ -41,7 +41,7 @@ function About() {
         {bioSections.map((section, index) => (
           <div key={index} className={`about-card ${section.align}`}>
             <div className="about-image">
-              <img src={section.img} alt={section.title} />
+              <img src={section.img} alt={section.title} loading="lazy" />
             </div>
             <div className="about-text">
               <h2>{section.title}</h2>

@@ -89,6 +89,28 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Variants for HighSchool and Department page headers */
+.about-header.hs-header {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+}
+
+.about-header.dept-header {
+  background: linear-gradient(135deg, #e67e22, #f1c40f);
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .about-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .about-image img {
+    transition: none;
+  }
+}
+
 /* 響應式：手機版改為上下堆疊 */
 @media (max-width: 768px) {
   .about-card, .about-card.right {
